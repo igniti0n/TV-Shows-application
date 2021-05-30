@@ -1,6 +1,7 @@
-import 'package:tw_shows/functions/episodes/domain/episode.dart';
+import 'package:equatable/equatable.dart';
+import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
 
-class Show {
+class Show extends Equatable {
   final String imageUrl;
   final String id;
   final String title;
@@ -12,4 +13,7 @@ class Show {
     required this.title,
     required this.id,
   });
+
+  @override
+  List<Object?> get props => [id, title, imageUrl, description];
 }
