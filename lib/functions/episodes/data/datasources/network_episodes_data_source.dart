@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:tw_shows/core/constants/networking.dart';
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/network_client.dart';
@@ -38,6 +40,7 @@ class NetworkEpisodesDataSourceImpl extends NetworkEpisodesDataSource {
   Future<List<Map<String, dynamic>>> fetchShowEpisodes(String showId) async {
     final _response = await _networkClient.client
         .get(ADDR_BASE + 'shows/' + showId + '/episodes');
+    log(_response.data.toString());
     if (!(_response.statusCode == 201 || _response.statusCode == 200))
       throw ServerException();
     return (_response.data['data'] as List<dynamic>)

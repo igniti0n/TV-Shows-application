@@ -6,7 +6,7 @@ import 'package:equatable/equatable.dart';
 import 'package:tw_shows/core/error/failures/failures.dart';
 import 'package:tw_shows/core/usecases/params.dart';
 import 'package:tw_shows/functions/authenticating_user/domain/models/user.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/repositories/user_repository.dart';
+import 'package:tw_shows/functions/authenticating_user/domain/usecases/save_rememberd_user_usecase.dart';
 import 'package:tw_shows/functions/authenticating_user/domain/usecases/sign_in_user_usecase.dart';
 import 'package:tw_shows/functions/authenticating_user/domain/usecases/sign_out_user_usecase.dart';
 
@@ -18,8 +18,12 @@ part 'auth_bloc_state.dart';
 class AuthBloc extends Bloc<AuthBlocEvent, AuthBlocState> {
   final SignInUserUsecase _signInUserUsecase;
   final SignOutUserUsecase _signOutUsecase;
-  AuthBloc(this._signInUserUsecase, this._signOutUsecase)
-      : super(AuthBlocInitial());
+  final SaveRememberdUserUsecase _saveRememberdUserUsecase;
+  AuthBloc(
+    this._signInUserUsecase,
+    this._signOutUsecase,
+    this._saveRememberdUserUsecase,
+  ) : super(AuthBlocInitial());
 
   @override
   Stream<AuthBlocState> mapEventToState(
@@ -29,7 +33,8 @@ class AuthBloc extends Bloc<AuthBlocEvent, AuthBlocState> {
     if (event is LogIn) {
       final either = await _signInUserUsecase(
           SignInParams(User(event.email, event.password)));
-      yield _yieldState(either);
+      yield await _yieldState(
+          either, User(event.email, event.password), event.shouldRemember);
     } else if (event is SignOut) {
       final either = await _signOutUsecase(NoParams());
       yield either.fold(
@@ -39,12 +44,18 @@ class AuthBloc extends Bloc<AuthBlocEvent, AuthBlocState> {
     }
   }
 
-  AuthBlocState _yieldState(Either<Failure, void> either) {
+  Future<AuthBlocState> _yieldState(
+      Either<Failure, void> either, User user, bool shouldRemember) async {
     return either.fold(
       (Failure failure) {
         return AuthFailed(failure.message);
       },
-      (r) => AuthSuccesfull(),
+      (r) async {
+        await _saveRememberdUserUsecase(SignInParams(
+          shouldRemember ? user : User('', ''),
+        ));
+        return AuthSuccesfull();
+      },
     );
   }
 }

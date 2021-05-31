@@ -10,8 +10,13 @@ abstract class AuthBlocEvent extends Equatable {
 class LogIn extends AuthBlocEvent {
   final String email;
   final String password;
+  final bool shouldRemember;
 
-  LogIn(this.email, this.password);
+  LogIn(
+    this.email,
+    this.password,
+    this.shouldRemember,
+  );
 }
 
 class SignUp extends AuthBlocEvent {

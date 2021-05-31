@@ -15,7 +15,7 @@ class EmailChanged extends AuthFormEvent {
   EmailChanged(this.email);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [email];
 }
 
 class PasswordChanged extends AuthFormEvent {
@@ -24,15 +24,23 @@ class PasswordChanged extends AuthFormEvent {
   PasswordChanged(this.password);
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [password];
 }
 
-class PasswordConfirmChanged extends AuthFormEvent {
-  final String password;
-  final String confirmPass;
+class ObscurePasswordChanged extends AuthFormEvent {
+  final bool isObscured;
 
-  PasswordConfirmChanged(this.password, this.confirmPass);
+  ObscurePasswordChanged(this.isObscured);
 
   @override
-  List<Object?> get props => [];
+  List<Object> get props => [isObscured];
+}
+
+class RememberUserChanged extends AuthFormEvent {
+  final bool isRemember;
+
+  RememberUserChanged(this.isRemember);
+
+  @override
+  List<Object> get props => [isRemember];
 }

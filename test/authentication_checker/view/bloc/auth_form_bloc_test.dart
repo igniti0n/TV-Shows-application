@@ -23,6 +23,8 @@ void main() {
   final _testCredentials = AuthCredentials(
     emailCredential: EmailCredential.initial(),
     passwordCredential: PasswordCredential.initial(),
+    isObscured: true,
+    isRemember: false,
   );
 
   final _testEmailCred = EmailCredential(_testEmail);
@@ -37,6 +39,8 @@ void main() {
       AuthFormChanged(AuthCredentials(
         emailCredential: _testEmailCred,
         passwordCredential: PasswordCredential.initial(),
+        isObscured: true,
+        isRemember: false,
       ))
     ],
   );
@@ -50,20 +54,8 @@ void main() {
       AuthFormChanged(AuthCredentials(
         emailCredential: EmailCredential.initial(),
         passwordCredential: _testPassCres,
-      ))
-    ],
-  );
-
-  bl.blocTest(
-    'should emit AuthFormChanged with correct credentials when password changed',
-    build: () => AuthFormBloc(_mockLoadRememberdUserUsecase),
-    wait: Duration(milliseconds: 120),
-    act: (bloc) =>
-        bloc.add(PasswordConfirmChanged(_testPassword, _testConfirmPassowrd)),
-    expect: () => [
-      AuthFormChanged(AuthCredentials(
-        emailCredential: EmailCredential.initial(),
-        passwordCredential: PasswordCredential.initial(),
+        isObscured: true,
+        isRemember: false,
       ))
     ],
   );

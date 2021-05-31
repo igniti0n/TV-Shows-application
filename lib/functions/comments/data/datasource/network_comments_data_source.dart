@@ -1,8 +1,9 @@
+import 'dart:developer';
+
 import 'package:tw_shows/core/constants/networking.dart';
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/network_client.dart';
 import 'package:tw_shows/functions/comments/data/enteties/comment_model.dart';
-import 'package:tw_shows/functions/episodes/data/enteties/episode_model.dart';
 
 abstract class NetworkCommentsDataSource {
   Future<List<Map<String, dynamic>>> getEpisodeComments(String episodeId);
@@ -20,6 +21,7 @@ class NetworkCommentsDataSourceImpl extends NetworkCommentsDataSource {
       ADDR_BASE + 'comments',
       data: commentModel.toJson(),
     );
+    log(_response.toString() + _response.statusCode.toString());
     if (!(_response.statusCode == 201 || _response.statusCode == 200))
       throw ServerException();
   }

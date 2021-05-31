@@ -7,7 +7,7 @@ import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/error/failures/failures.dart';
 import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
 import 'package:tw_shows/functions/episodes/domain/repositories/episodes_repository.dart';
-import 'package:tw_shows/functions/episodes/view/usecases/load_show_episodes_usecase.dart';
+import 'package:tw_shows/functions/episodes/domain/usecases/load_show_episodes_usecase.dart';
 
 class MockEpisodesRepository extends Mock implements EpisodesRepository {}
 

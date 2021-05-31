@@ -17,7 +17,7 @@ class ShowModel extends Show {
     return ShowModel(
       imageUrl: map['imageUrl'],
       description: map['description'] ?? '',
-      id: map['id'],
+      id: map['_id'],
       title: map['title'],
     );
   }

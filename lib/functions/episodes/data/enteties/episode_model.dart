@@ -27,7 +27,7 @@ class EpisodeModel extends Episode {
       seasonNumber: map['season'],
       episodeNumber: map['episodeNumber'],
       id: map['_id'],
-      showId: map['showId'],
+      showId: map['showId'] ?? '',
     );
   }
 

@@ -16,6 +16,8 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       : super(AuthFormInitial(AuthCredentials(
           emailCredential: EmailCredential.initial(),
           passwordCredential: PasswordCredential.initial(),
+          isObscured: true,
+          isRemember: false,
         )));
 
   @override
@@ -40,21 +42,39 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       yield AuthFormChanged(state.authCredentials
           .copyWith(passwordCredential: PasswordCredential(event.password)));
     } else if (event is InitialLoad) {
-      final _res = await _loadRememberdUserUsecase(NoParams());
-      yield _res.fold(
-        (l) => AuthFormInitial(
-          AuthCredentials(
-            emailCredential: EmailCredential.initial(),
-            passwordCredential: PasswordCredential.initial(),
-          ),
-        ),
-        (r) => AuthFormInitial(
-          AuthCredentials(
-            emailCredential: EmailCredential(r.email),
-            passwordCredential: PasswordCredential(r.password),
-          ),
-        ),
-      );
+      yield await _tryLoadRememberdUserCredentials();
+    } else if (event is ObscurePasswordChanged) {
+      yield AuthFormChanged(
+          state.authCredentials.copyWith(isObscured: event.isObscured));
+    } else if (event is RememberUserChanged) {
+      yield AuthFormChanged(
+          state.authCredentials.copyWith(isRemember: event.isRemember));
     }
+  }
+
+  Future<AuthFormState> _tryLoadRememberdUserCredentials() async {
+    final _res = await _loadRememberdUserUsecase(NoParams());
+    return _res.fold(
+      (l) => AuthFormInitial(
+        AuthCredentials(
+          emailCredential: EmailCredential.initial(),
+          passwordCredential: PasswordCredential.initial(),
+          isObscured: true,
+          isRemember: false,
+        ),
+      ),
+      (r) => AuthFormInitial(
+        AuthCredentials(
+          emailCredential: r.email.isEmpty
+              ? EmailCredential.initial()
+              : EmailCredential(r.email),
+          passwordCredential: r.password.isEmpty
+              ? PasswordCredential.initial()
+              : PasswordCredential(r.password),
+          isObscured: true,
+          isRemember: r.email.isEmpty ? false : true,
+        ),
+      ),
+    );
   }
 }

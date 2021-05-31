@@ -4,13 +4,17 @@ import 'package:equatable/equatable.dart';
 class AuthCredentials extends Equatable {
   final EmailCredential emailCredential;
   final PasswordCredential passwordCredential;
+  final bool isObscured;
+  final bool isRemember;
 
   AuthCredentials({
     required this.emailCredential,
     required this.passwordCredential,
+    required this.isObscured,
+    required this.isRemember,
   });
 
-  bool isValid(bool isLogin) {
+  bool isValid() {
     bool _areAllInputsValid = (this.emailCredential.errorMessage == null &&
         this.passwordCredential.errorMessage == null);
 
@@ -23,10 +27,14 @@ class AuthCredentials extends Equatable {
   AuthCredentials copyWith({
     EmailCredential? emailCredential,
     PasswordCredential? passwordCredential,
+    bool? isObscured,
+    bool? isRemember,
   }) {
     return AuthCredentials(
       emailCredential: emailCredential ?? this.emailCredential,
       passwordCredential: passwordCredential ?? this.passwordCredential,
+      isObscured: isObscured ?? this.isObscured,
+      isRemember: isRemember ?? this.isRemember,
     );
   }
 
@@ -34,6 +42,8 @@ class AuthCredentials extends Equatable {
   List<Object?> get props => [
         this.emailCredential,
         this.passwordCredential,
+        this.isObscured,
+        this.isRemember,
       ];
 }
 

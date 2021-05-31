@@ -1,0 +1,15 @@
+<svg id="img-placeholder-user2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.155" y1="0.14" x2="0.624" y2="0.724" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff758c"/>
+      <stop offset="1" stop-color="#ff7eb3"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(6 4)">
+    <path id="Fill_1_Copy_2" data-name="Fill 1 Copy 2" d="M34.214,14.923C28.287,10.237,17.664,3.257,10.92.624c-4.667-1.822-9.2.449-9.88,5.448A140.607,140.607,0,0,0,.407,33.564c.514,5.02,4.915,7.629,9.619,5.9,6.345-2.326,18.3-8.778,23.926-13.194,3.949-3.1,4.2-8.239.261-11.352" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+    <path id="Stroke_6_Copy_2" data-name="Stroke 6 Copy 2" d="M0,3.08a3.055,3.055,0,1,1,6.109,0" transform="translate(19 20)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Stroke_6_Copy_4" data-name="Stroke 6 Copy 4" d="M0,3.08a3.055,3.055,0,1,1,6.109,0" transform="translate(22 3)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Stroke_8_Copy_2" data-name="Stroke 8 Copy 2" d="M.053,3.647a3.055,3.055,0,1,1,6-1.132" transform="translate(7 21)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Fill_4" data-name="Fill 4" d="M.7,1.75a.851.851,0,0,0-.689.961.043.043,0,0,0,0,.008A5.42,5.42,0,0,0,6.326,7.145a5.471,5.471,0,0,0,4.446-5.537,5.368,5.368,0,0,0-.115-.925A.863.863,0,0,0,9.649.016Z" transform="translate(10 27)" fill="#2e2e2e"/>
+  </g>
+</svg>

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/usecases/params.dart';
 import 'package:tw_shows/core/usecases/usecase.dart';
@@ -17,7 +19,8 @@ class LoadShowUsecase extends Usecase<Show, ShowParams> {
       return Right(_show);
     } on NoConnectionException catch (_) {
       return Left(NoConnectionFailure());
-    } catch (_) {
+    } catch (err) {
+      log(err.toString());
       return Left(ServerFailure());
     }
   }

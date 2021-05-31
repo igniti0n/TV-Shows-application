@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:tw_shows/core/error/failures/failures.dart';
 import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/view/usecases/load_show_episodes_usecase.dart';
+import 'package:tw_shows/functions/episodes/domain/usecases/load_show_episodes_usecase.dart';
 
 part 'episodes_event.dart';
 part 'episodes_state.dart';

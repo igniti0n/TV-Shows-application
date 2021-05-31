@@ -1,0 +1,22 @@
+<svg id="img-placehoder-comments" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.155" y1="0.14" x2="0.624" y2="0.724" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff758c"/>
+      <stop offset="1" stop-color="#ff7eb3"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(9 9)">
+    <path id="Stroke_11" data-name="Stroke 11" d="M0,0V25.368H4.947" transform="translate(53 73)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <path id="Stroke_17" data-name="Stroke 17" d="M0,0V15.816" transform="translate(66 71)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <path id="Stroke_13" data-name="Stroke 13" d="M4.947,0V25.368H0" transform="translate(33 73)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <path id="Fill_1" data-name="Fill 1" d="M77.5,33.52C64.073,22.994,40.011,7.315,24.734,1.4,14.162-2.69,3.9,2.41,2.354,13.64-.092,31.392-.74,59.291.922,75.393,2.086,86.67,12.056,92.53,22.71,88.656c14.372-5.225,41.46-19.718,54.2-29.636,8.945-6.966,9.514-18.506.592-25.5" transform="translate(11 0)" fill="url(#linear-gradient)"/>
+    <path id="Stroke_6" data-name="Stroke 6" d="M0,6.919a6.919,6.919,0,0,1,13.838,0" transform="translate(54 44)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <path id="Stroke_8" data-name="Stroke 8" d="M.119,8.192a6.919,6.919,0,0,1,13.6-2.544" transform="translate(26 46)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <path id="Stroke_15" data-name="Stroke 15" d="M14.129,22.528S2.879,26.772.379,17,8.391,1,12.51,0" transform="translate(0.583 41)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <path id="Fill_19" data-name="Fill 19" d="M30.165,11.25H0V0H30.165l7.789,5.625Z" transform="translate(66 71)" fill="#4a90e2"/>
+    <path id="Fill_23" data-name="Fill 23" d="M7.343,13.782H1A1.041,1.041,0,0,1,0,12.7V1.078A1.04,1.04,0,0,1,1,0H7.343a1.041,1.041,0,0,1,1,1.078V12.7a1.042,1.042,0,0,1-1,1.078" transform="translate(61 70)" fill="#e7b056"/>
+    <path id="Fill_25" data-name="Fill 25" d="M8.343,11.25H5.289A5.288,5.288,0,0,1,0,5.961V5.289A5.289,5.289,0,0,1,5.289,0H8.343Z" transform="translate(53 71)" fill="#ff758c"/>
+    <path id="Stroke_21" data-name="Stroke 21" d="M0,3.875A4.178,4.178,0,0,0,3.542,0" transform="translate(66 83)" fill="none" stroke="#2e2e2e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+    <circle id="Oval_2" data-name="Oval 2" cx="4" cy="4" r="4" transform="translate(38 64)" fill="#2e2e2e"/>
+  </g>
+</svg>

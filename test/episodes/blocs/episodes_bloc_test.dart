@@ -10,7 +10,7 @@ import 'package:dartz/dartz.dart';
 import 'package:tw_shows/functions/episodes/data/enteties/episode_model.dart';
 import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
 import 'package:tw_shows/functions/episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
-import 'package:tw_shows/functions/episodes/view/usecases/load_show_episodes_usecase.dart';
+import 'package:tw_shows/functions/episodes/domain/usecases/load_show_episodes_usecase.dart';
 
 import '../../fixtures_parser.dart';
 

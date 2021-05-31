@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:dio/src/response.dart';
 import 'package:tw_shows/core/constants/networking.dart';
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/network_client.dart';
@@ -20,6 +23,15 @@ class NetworkUserDataSourceImpl extends NetworkUserDataSource {
 
     if (!(_response.statusCode == 200 || _response.statusCode == 201))
       throw ServerException();
+    else {
+      _addTokenToInterceptor(_response);
+    }
+  }
+
+  void _addTokenToInterceptor(Response<dynamic> _response) {
+    final String _token =
+        (_response.data['data'] as Map<String, dynamic>)['token'] as String;
+    _networkClient.setInterceptorAuthHeader(_token);
   }
 
   @override

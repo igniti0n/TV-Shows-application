@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/connection_checker.dart';
 import 'package:tw_shows/functions/shows/data/datasources/network_data_source.dart';
@@ -15,10 +17,13 @@ class ShowsRepositoryImpl extends ShowsRepository {
   Future<List<Show>> fetchAllShows() async {
     await _checkIsConnectedToInternet();
     final _res = await _networkShowsDataSource.fetchAllShows();
-    final List<Show> _shows = (_res['data'] as List<dynamic>)
-        .cast<Map<String, dynamic>>()
-        .map((e) => ShowModel.fromJson(e))
-        .toList();
+
+    final List<Map<String, dynamic>> _showList =
+        (_res['data'] as List<dynamic>).cast<Map<String, dynamic>>();
+
+    final List<Show> _shows =
+        _showList.map((e) => ShowModel.fromJson(e)).toList();
+
     return _shows;
   }
 

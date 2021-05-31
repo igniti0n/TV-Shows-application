@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
@@ -18,7 +20,8 @@ class LoadShowEpisodesUsecase extends Usecase<List<Episode>, EpisodesParams> {
       return Right(_episodes);
     } on NoConnectionException catch (_) {
       return Left(NoConnectionFailure());
-    } catch (_) {
+    } catch (err) {
+      log(err.toString());
       return Left(ServerFailure());
     }
   }
