@@ -1,4 +1,4 @@
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
+import '../../domain/models/show.dart';
 
 class ShowModel extends Show {
   ShowModel({

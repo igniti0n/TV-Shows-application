@@ -1,9 +1,9 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/core/usecases/usecase.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/repositories/user_repository.dart';
+import '../../../../core/usecases/params.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../repositories/user_repository.dart';
 
 class SignOutUserUsecase extends Usecase<void, NoParams> {
   final UserRepository _userRepository;

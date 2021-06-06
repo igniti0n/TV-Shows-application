@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episode_image/episode_image_bloc.dart';
+import '../../../domain/models/episode.dart';
+import '../episode_image/episode_image_bloc.dart';
 
 part 'episode_form_event.dart';
 part 'episode_form_state.dart';

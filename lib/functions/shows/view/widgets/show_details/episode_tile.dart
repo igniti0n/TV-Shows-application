@@ -2,9 +2,9 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tw_shows/core/constants/colors.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
+import '../../../../../core/constants/colors.dart';
+import '../../../../../core/constants/pages.dart';
+import '../../../../episodes/domain/models/episode.dart';
 
 class EpisodeTile extends StatelessWidget {
   const EpisodeTile({

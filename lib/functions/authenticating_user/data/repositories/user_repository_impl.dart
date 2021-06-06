@@ -1,10 +1,10 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/connection_checker.dart';
-import 'package:tw_shows/core/storage/secure_storage_manager.dart';
-import 'package:tw_shows/functions/authenticating_user/data/datasources/network_user_data_source.dart';
-import 'package:tw_shows/functions/authenticating_user/data/entities/user_model.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/models/user.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/repositories/user_repository.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/connection_checker.dart';
+import '../../../../core/storage/secure_storage_manager.dart';
+import '../datasources/network_user_data_source.dart';
+import '../entities/user_model.dart';
+import '../../domain/models/user.dart';
+import '../../domain/repositories/user_repository.dart';
 
 class UserRepositoryImpl extends UserRepository {
   final NetworkUserDataSource _networkUserDataSource;

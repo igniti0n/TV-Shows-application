@@ -1,4 +1,4 @@
-import 'package:tw_shows/functions/comments/domain/models/comment.dart';
+import '../../domain/models/comment.dart';
 
 class CommentModel extends Comment {
   CommentModel(

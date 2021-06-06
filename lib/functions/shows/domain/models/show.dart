@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
+import '../../../episodes/domain/models/episode.dart';
 
 class Show extends Equatable {
   final String imageUrl;

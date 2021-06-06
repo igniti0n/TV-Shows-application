@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:tw_shows/core/constants/networking.dart';
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/network_client.dart';
-import 'package:tw_shows/functions/comments/data/enteties/comment_model.dart';
+import '../../../../core/constants/networking.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/network_client.dart';
+import '../enteties/comment_model.dart';
 
 abstract class NetworkCommentsDataSource {
   Future<List<Map<String, dynamic>>> getEpisodeComments(String episodeId);

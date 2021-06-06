@@ -4,10 +4,10 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tw_shows/core/constants/colors.dart';
-import 'package:tw_shows/functions/comments/domain/models/comment.dart';
-import 'package:tw_shows/functions/comments/view/blocs/comment_post/comment_post_bloc.dart';
-import 'package:tw_shows/functions/comments/view/blocs/comments_bloc/comments_bloc.dart';
+import '../../../../core/constants/colors.dart';
+import '../../domain/models/comment.dart';
+import '../blocs/comment_post/comment_post_bloc.dart';
+import '../blocs/comments_bloc/comments_bloc.dart';
 
 class CommentInput extends StatefulWidget {
   final Size deviceSize;

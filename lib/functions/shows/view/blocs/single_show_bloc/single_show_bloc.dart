@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
-import 'package:tw_shows/functions/shows/domain/usecases/load_show_usecase_impl.dart';
+import '../../../../../core/error/failures/failures.dart';
+import '../../../domain/models/show.dart';
+import '../../../domain/usecases/load_show_usecase_impl.dart';
 
 part 'single_show_event.dart';
 part 'single_show_state.dart';

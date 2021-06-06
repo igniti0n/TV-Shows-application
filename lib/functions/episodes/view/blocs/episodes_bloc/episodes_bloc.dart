@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/domain/usecases/load_show_episodes_usecase.dart';
+import '../../../../../core/error/failures/failures.dart';
+import '../../../domain/models/episode.dart';
+import '../../../domain/usecases/load_show_episodes_usecase.dart';
 
 part 'episodes_event.dart';
 part 'episodes_state.dart';

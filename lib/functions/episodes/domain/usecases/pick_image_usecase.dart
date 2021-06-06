@@ -1,9 +1,9 @@
 import 'package:image_picker/image_picker.dart' as ip;
-import 'package:tw_shows/core/error/failures/failures.dart';
+import '../../../../core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tw_shows/core/native/image_picker.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/core/usecases/usecase.dart';
+import '../../../../core/native/image_picker.dart';
+import '../../../../core/usecases/params.dart';
+import '../../../../core/usecases/usecase.dart';
 
 class PickImageUsecase extends Usecase<String, PickImageParams> {
   final ImagePicker _imagePicker;

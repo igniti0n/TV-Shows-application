@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episode_form_bloc/episode_form_bloc.dart';
-import 'package:tw_shows/functions/shows/view/blocs/single_show_bloc/single_show_bloc.dart';
-import 'package:tw_shows/functions/shows/view/widgets/show_details/show_detail_content.dart';
+import '../../../../core/constants/pages.dart';
+import '../../../episodes/view/blocs/episode_form_bloc/episode_form_bloc.dart';
+import '../blocs/single_show_bloc/single_show_bloc.dart';
+import '../widgets/show_details/show_detail_content.dart';
 
 class ShowDetailsPage extends StatelessWidget {
   const ShowDetailsPage({Key? key}) : super(key: key);

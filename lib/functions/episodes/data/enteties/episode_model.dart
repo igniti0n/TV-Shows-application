@@ -1,4 +1,4 @@
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
+import '../../domain/models/episode.dart';
 
 class EpisodeModel extends Episode {
   EpisodeModel({

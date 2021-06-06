@@ -1,12 +1,12 @@
 import 'dart:developer';
 
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/core/usecases/usecase.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/domain/repositories/episodes_repository.dart';
+import '../../../../core/usecases/params.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../models/episode.dart';
+import '../repositories/episodes_repository.dart';
 
 class LoadShowEpisodesUsecase extends Usecase<List<Episode>, EpisodesParams> {
   final EpisodesRepository _episodesRepository;

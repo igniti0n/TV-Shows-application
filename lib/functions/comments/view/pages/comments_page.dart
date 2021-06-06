@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tw_shows/core/constants/strings.dart';
-import 'package:tw_shows/functions/comments/view/blocs/comments_bloc/comments_bloc.dart';
-import 'package:tw_shows/functions/comments/view/widgets/comment_input.dart';
-import 'package:tw_shows/functions/comments/view/widgets/comment_tile.dart';
+import 'package:get_it/get_it.dart';
+import '../../domain/usecases/create_new_comment_usecase.dart';
+import '../blocs/comment_post/comment_post_bloc.dart';
+import '../../../../core/constants/strings.dart';
+import '../blocs/comments_bloc/comments_bloc.dart';
+import '../widgets/comment_input.dart';
+import '../widgets/comment_tile.dart';
 
 class CommentsPage extends StatelessWidget {
   final String episodeId;
@@ -16,41 +19,46 @@ class CommentsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size _deviceSize = MediaQuery.of(context).size;
 
-    return PlatformScaffold(
-      appBar: PlatformAppBar(
-        title: PlatformText('Comments'),
+    return BlocProvider(
+      create: (context) => CommentPostBloc(
+        GetIt.I<CreateNewCommentUsecase>(),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 16.0),
-        child: SizedBox(
-          height: _deviceSize.height,
-          width: double.infinity,
-          child: Column(
-            children: [
-              Expanded(
-                child: BlocBuilder<CommentsBloc, CommentsState>(
-                  builder: (context, commentsState) {
-                    if (commentsState is CommentsLoaded) {
-                      if (commentsState.comments.isEmpty) {
-                        return _buildNoComments(context);
+      child: PlatformScaffold(
+        appBar: PlatformAppBar(
+          title: PlatformText('Comments'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(top: 16.0),
+          child: SizedBox(
+            height: _deviceSize.height,
+            width: double.infinity,
+            child: Column(
+              children: [
+                Expanded(
+                  child: BlocBuilder<CommentsBloc, CommentsState>(
+                    builder: (context, commentsState) {
+                      if (commentsState is CommentsLoaded) {
+                        if (commentsState.comments.isEmpty) {
+                          return _buildNoComments(context);
+                        }
+                        return _buildCommentsList(commentsState, _deviceSize);
+                      } else if (commentsState is CommentsError) {
+                        return Center(
+                          child: PlatformText(commentsState.message),
+                        );
                       }
-                      return _buildCommentsList(commentsState, _deviceSize);
-                    } else if (commentsState is CommentsError) {
                       return Center(
-                        child: PlatformText(commentsState.message),
+                        child: PlatformCircularProgressIndicator(),
                       );
-                    }
-                    return Center(
-                      child: PlatformCircularProgressIndicator(),
-                    );
-                  },
+                    },
+                  ),
                 ),
-              ),
-              CommentInput(
-                deviceSize: _deviceSize,
-                episodeId: episodeId,
-              ),
-            ],
+                CommentInput(
+                  deviceSize: _deviceSize,
+                  episodeId: episodeId,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -64,10 +72,7 @@ class CommentsPage extends StatelessWidget {
         separatorBuilder: (context, index) => Divider(
           color: Colors.grey,
         ),
-
         itemCount: commentsState.comments.length,
-        // itemExtent: _deviceSize.height * 0.15,
-
         itemBuilder: (ctx, index) => CommentTile(
           comment: commentsState.comments[index],
           height: _deviceSize.height * 0.1,

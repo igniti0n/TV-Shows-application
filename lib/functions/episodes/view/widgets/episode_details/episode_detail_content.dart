@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tw_shows/core/constants/colors.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/comments/view/blocs/comments_bloc/comments_bloc.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
+import '../../../../../core/constants/colors.dart';
+import '../../../../../core/constants/pages.dart';
+import '../../../../comments/view/blocs/comments_bloc/comments_bloc.dart';
+import '../../../domain/models/episode.dart';
 
 class EpisodeDetailContent extends StatelessWidget {
   const EpisodeDetailContent({

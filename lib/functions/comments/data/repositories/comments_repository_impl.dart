@@ -1,9 +1,9 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/connection_checker.dart';
-import 'package:tw_shows/functions/comments/data/datasource/network_comments_data_source.dart';
-import 'package:tw_shows/functions/comments/data/enteties/comment_model.dart';
-import 'package:tw_shows/functions/comments/domain/models/comment.dart';
-import 'package:tw_shows/functions/comments/domain/repositories/comments_repository.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/connection_checker.dart';
+import '../datasource/network_comments_data_source.dart';
+import '../enteties/comment_model.dart';
+import '../../domain/models/comment.dart';
+import '../../domain/repositories/comments_repository.dart';
 
 class CommentsRepositoryImpl extends CommentsRepository {
   final ConnectionChecker _connectionChecker;

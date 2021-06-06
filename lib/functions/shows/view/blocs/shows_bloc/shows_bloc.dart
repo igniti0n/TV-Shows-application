@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
-import 'package:tw_shows/functions/shows/domain/usecases/load_shows_usecase_impl.dart';
+import '../../../../../core/error/failures/failures.dart';
+import '../../../../../core/usecases/params.dart';
+import '../../../domain/models/show.dart';
+import '../../../domain/usecases/load_shows_usecase_impl.dart';
 
 part 'shows_event.dart';
 part 'shows_state.dart';

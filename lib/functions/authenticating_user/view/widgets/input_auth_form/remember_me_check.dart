@@ -2,7 +2,7 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tw_shows/functions/authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
+import '../../../../authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
 
 class RememberMeCheck extends StatelessWidget {
   final bool isChecked;

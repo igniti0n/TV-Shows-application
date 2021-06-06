@@ -1,9 +1,9 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/connection_checker.dart';
-import 'package:tw_shows/functions/shows/data/datasources/network_data_source.dart';
-import 'package:tw_shows/functions/shows/data/enteties/show_model.dart';
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
-import 'package:tw_shows/functions/shows/domain/repositories/shows_repository.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/connection_checker.dart';
+import '../datasources/network_data_source.dart';
+import '../enteties/show_model.dart';
+import '../../domain/models/show.dart';
+import '../../domain/repositories/shows_repository.dart';
 
 class ShowsRepositoryImpl extends ShowsRepository {
   final ConnectionChecker _connectionChecker;

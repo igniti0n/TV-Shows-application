@@ -1,4 +1,4 @@
-import 'package:tw_shows/functions/authenticating_user/domain/models/user.dart';
+import '../models/user.dart';
 
 abstract class UserRepository {
   Future<void> authenticateUserWithEmailAndPassword(User user);

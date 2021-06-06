@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:tw_shows/core/constants/networking.dart';
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/network_client.dart';
-import 'package:tw_shows/functions/episodes/data/enteties/episode_model.dart';
+import '../../../../core/constants/networking.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/network_client.dart';
+import '../enteties/episode_model.dart';
 
 abstract class NetworkEpisodesDataSource {
   Future<Map<String, dynamic>> fetchEpisode(String episodeId);

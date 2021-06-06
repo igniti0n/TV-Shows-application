@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
-import 'package:tw_shows/functions/shows/view/widgets/show_details/episode_tile.dart';
+import '../../../../episodes/domain/models/episode.dart';
+import '../../../../episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
+import 'episode_tile.dart';
 
 class EpisodesList extends StatelessWidget {
   final String showId;

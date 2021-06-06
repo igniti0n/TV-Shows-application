@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/authenticating_user/view/auth_bloc/auth_bloc_bloc.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
-import 'package:tw_shows/functions/shows/view/blocs/shows_bloc/shows_bloc.dart';
-import 'package:tw_shows/functions/shows/view/blocs/single_show_bloc/single_show_bloc.dart';
-import 'package:tw_shows/functions/shows/view/widgets/show_list_tile.dart';
+import '../../../../core/constants/pages.dart';
+import '../../../authenticating_user/view/auth_bloc/auth_bloc_bloc.dart';
+import '../../../episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
+import '../../domain/models/show.dart';
+import '../blocs/shows_bloc/shows_bloc.dart';
+import '../blocs/single_show_bloc/single_show_bloc.dart';
+import '../widgets/show_list_tile.dart';
 
 class ShowsPage extends StatelessWidget {
   const ShowsPage({Key? key}) : super(key: key);

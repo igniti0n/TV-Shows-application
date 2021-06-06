@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tw_shows/functions/authenticating_user/view/widgets/input_auth_form/email_field.dart';
-import 'package:tw_shows/functions/authenticating_user/view/widgets/input_auth_form/password_field.dart';
-import 'package:tw_shows/functions/authenticating_user/view/widgets/input_auth_form/remember_me_check.dart';
-import 'package:tw_shows/functions/authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
+import 'email_field.dart';
+import 'password_field.dart';
+import 'remember_me_check.dart';
+import '../../../../authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
 
 class InputAuthenticationForm extends StatefulWidget {
   const InputAuthenticationForm({

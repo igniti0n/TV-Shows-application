@@ -1,9 +1,9 @@
-import 'package:tw_shows/core/error/failures/failures.dart';
+import '../../../../core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/core/usecases/usecase.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/repositories/user_repository.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/usecases/sign_in_user_usecase.dart';
+import '../../../../core/usecases/params.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../repositories/user_repository.dart';
+import 'sign_in_user_usecase.dart';
 
 class SaveRememberdUserUsecase extends Usecase<void, SignInParams> {
   final UserRepository _userRepository;

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tw_shows/core/constants/colors.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episode_form_bloc/episode_form_bloc.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episode_image/episode_image_bloc.dart';
+import '../../../../../core/constants/colors.dart';
+import '../../blocs/episode_form_bloc/episode_form_bloc.dart';
+import '../../blocs/episode_image/episode_image_bloc.dart';
 
 import 'add_episode_input_fields.dart';
 

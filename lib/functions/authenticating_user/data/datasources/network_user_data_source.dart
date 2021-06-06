@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:tw_shows/core/constants/networking.dart';
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/network_client.dart';
-import 'package:tw_shows/functions/authenticating_user/data/entities/user_model.dart';
+import '../../../../core/constants/networking.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/network_client.dart';
+import '../entities/user_model.dart';
 
 abstract class NetworkUserDataSource {
   Future<void> signIn(UserModel userModel);

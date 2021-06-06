@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:tw_shows/functions/authenticating_user/data/entities/user_model.dart';
+import '../../functions/authenticating_user/data/entities/user_model.dart';
 
 abstract class SecureStorageManager {
   Future<Map<String, dynamic>> loadRememberdUser();

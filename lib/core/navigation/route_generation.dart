@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/authenticating_user/view/pages/authentication_page.dart';
-import 'package:tw_shows/functions/comments/view/pages/comments_page.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/view/pages/add_episode_page.dart';
-import 'package:tw_shows/functions/episodes/view/pages/episode_detal_page.dart';
-import 'package:tw_shows/functions/shows/view/pages/show_details_page.dart';
-import 'package:tw_shows/functions/shows/view/pages/shows_page.dart';
+import '../constants/pages.dart';
+import '../../functions/authenticating_user/view/pages/authentication_page.dart';
+import '../../functions/comments/view/pages/comments_page.dart';
+import '../../functions/episodes/domain/models/episode.dart';
+import '../../functions/episodes/view/pages/add_episode_page.dart';
+import '../../functions/episodes/view/pages/episode_detal_page.dart';
+import '../../functions/shows/view/pages/show_details_page.dart';
+import '../../functions/shows/view/pages/shows_page.dart';
 
 Route? onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {

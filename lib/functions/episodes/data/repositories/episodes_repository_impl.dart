@@ -1,9 +1,9 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/network/connection_checker.dart';
-import 'package:tw_shows/functions/episodes/data/datasources/network_episodes_data_source.dart';
-import 'package:tw_shows/functions/episodes/data/enteties/episode_model.dart';
-import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/domain/repositories/episodes_repository.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/connection_checker.dart';
+import '../datasources/network_episodes_data_source.dart';
+import '../enteties/episode_model.dart';
+import '../../domain/models/episode.dart';
+import '../../domain/repositories/episodes_repository.dart';
 
 class EpisodesRepositoryImpl extends EpisodesRepository {
   final ConnectionChecker _connectionChecker;

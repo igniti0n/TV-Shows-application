@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
-import 'package:tw_shows/functions/shows/view/blocs/single_show_bloc/single_show_bloc.dart';
-import 'package:tw_shows/functions/shows/view/widgets/show_details/show_information.dart';
+import '../../../domain/models/show.dart';
+import '../../blocs/single_show_bloc/single_show_bloc.dart';
+import 'show_information.dart';
 
 import 'episodes_list.dart';
 

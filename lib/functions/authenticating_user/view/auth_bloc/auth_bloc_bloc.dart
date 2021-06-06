@@ -3,12 +3,12 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/models/user.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/usecases/save_rememberd_user_usecase.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/usecases/sign_in_user_usecase.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/usecases/sign_out_user_usecase.dart';
+import '../../../../core/error/failures/failures.dart';
+import '../../../../core/usecases/params.dart';
+import '../../domain/models/user.dart';
+import '../../domain/usecases/save_rememberd_user_usecase.dart';
+import '../../domain/usecases/sign_in_user_usecase.dart';
+import '../../domain/usecases/sign_out_user_usecase.dart';
 
 import '../../../../core/constants/error_messages.dart';
 

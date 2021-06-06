@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:tw_shows/functions/authetication_checker/domain/usecases/load_rememberd_user_usecase.dart';
+
+import '../domain/usecases/load_rememberd_user_usecase.dart';
 import '../view/auth_form_bloc/auth_form_bloc.dart';
 
 void initiDependenciesAuthenticationChecker() {

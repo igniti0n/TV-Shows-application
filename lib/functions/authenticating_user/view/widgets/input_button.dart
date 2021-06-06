@@ -4,12 +4,12 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tw_shows/core/constants/colors.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/authenticating_user/view/auth_bloc/auth_bloc_bloc.dart';
-import 'package:tw_shows/functions/authetication_checker/domain/models/auth_credentials.dart';
-import 'package:tw_shows/functions/authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
-import 'package:tw_shows/functions/shows/view/blocs/shows_bloc/shows_bloc.dart';
+import '../../../../core/constants/colors.dart';
+import '../../../../core/constants/pages.dart';
+import '../auth_bloc/auth_bloc_bloc.dart';
+import '../../../authetication_checker/domain/models/auth_credentials.dart';
+import '../../../authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
+import '../../../shows/view/blocs/shows_bloc/shows_bloc.dart';
 
 class InputButton extends StatelessWidget {
   const InputButton({

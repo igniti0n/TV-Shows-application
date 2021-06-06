@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tw_shows/core/constants/colors.dart';
-import 'package:tw_shows/functions/authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
+import '../../../../../core/constants/colors.dart';
+import '../../../../authetication_checker/view/auth_form_bloc/auth_form_bloc.dart';
 
 class EmailField extends StatelessWidget {
   final AuthFormState authFormState;

@@ -2,10 +2,10 @@ import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:tw_shows/core/constants/pages.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
-import 'package:tw_shows/functions/shows/domain/models/show.dart';
-import 'package:tw_shows/functions/shows/view/blocs/single_show_bloc/single_show_bloc.dart';
+import '../../../../core/constants/pages.dart';
+import '../../../episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
+import '../../domain/models/show.dart';
+import '../blocs/single_show_bloc/single_show_bloc.dart';
 
 class ShowListTile extends StatelessWidget {
   const ShowListTile({

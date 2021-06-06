@@ -3,9 +3,9 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
-import 'package:tw_shows/functions/comments/domain/models/comment.dart';
-import 'package:tw_shows/functions/comments/domain/usecases/load_episode_comments_usecase.dart';
+import '../../../../../core/error/failures/failures.dart';
+import '../../../domain/models/comment.dart';
+import '../../../domain/usecases/load_episode_comments_usecase.dart';
 
 part 'comments_event.dart';
 part 'comments_state.dart';

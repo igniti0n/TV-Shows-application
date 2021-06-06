@@ -1,10 +1,10 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/core/usecases/usecase.dart';
-import 'package:tw_shows/functions/comments/domain/models/comment.dart';
-import 'package:tw_shows/functions/comments/domain/repositories/comments_repository.dart';
+import '../../../../core/usecases/params.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../models/comment.dart';
+import '../repositories/comments_repository.dart';
 
 class CreateNewCommentUsecase extends Usecase<void, CommentParams> {
   final CommentsRepository _commentsRepository;

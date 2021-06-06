@@ -1,10 +1,10 @@
-import 'package:tw_shows/core/error/exceptions/exceptions.dart';
-import 'package:tw_shows/core/error/failures/failures.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/error/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/core/usecases/usecase.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/models/user.dart';
-import 'package:tw_shows/functions/authenticating_user/domain/repositories/user_repository.dart';
+import '../../../../core/usecases/params.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../models/user.dart';
+import '../repositories/user_repository.dart';
 
 class SignInUserUsecase extends Usecase<void, SignInParams> {
   final UserRepository _userRepository;

@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:tw_shows/core/usecases/params.dart';
-import 'package:tw_shows/functions/authetication_checker/domain/usecases/load_rememberd_user_usecase.dart';
+import '../../../../core/usecases/params.dart';
+import '../../domain/usecases/load_rememberd_user_usecase.dart';
 import '../../domain/models/auth_credentials.dart';
 import 'package:stream_transform/stream_transform.dart';
 

@@ -1,9 +1,9 @@
-import 'package:tw_shows/core/dependency_injection.dart';
-import 'package:tw_shows/functions/authenticating_user/di/dependency_injection.dart';
-import 'package:tw_shows/functions/authetication_checker/di/dependency_injection.dart';
-import 'package:tw_shows/functions/comments/di/dependency_injection.dart';
-import 'package:tw_shows/functions/episodes/di/dependency_injection.dart';
-import 'package:tw_shows/functions/shows/di/dependency_injection.dart';
+import '../core/dependency_injection.dart';
+import 'authenticating_user/di/dependency_injection.dart';
+import 'authetication_checker/di/dependency_injection.dart';
+import 'comments/di/dependency_injection.dart';
+import 'episodes/di/dependency_injection.dart';
+import 'shows/di/dependency_injection.dart';
 
 class DependencyInjector {
   static void initiDependencies() async {
