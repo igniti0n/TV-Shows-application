@@ -59,7 +59,11 @@ void main() {
         when(_mockNetworkClient.client).thenReturn(_mockDio);
         when(_mockDio.post(
           ADDR_BASE + 'episodes/',
-          data: _testEpisode.toJson(),
+          data: _testEpisode.toJson()
+            ..putIfAbsent(
+              'mediaId',
+              () => _testEpisode.imageUrl,
+            ),
         )).thenAnswer((_) async => _testResponse);
         // act
         await _networkEpisodesDataSource.createNewEpisode(_testEpisode);
@@ -67,7 +71,11 @@ void main() {
         // assert
         verify(_mockDio.post(
           ADDR_BASE + 'episodes/',
-          data: _testEpisode.toJson(),
+          data: _testEpisode.toJson()
+            ..putIfAbsent(
+              'mediaId',
+              () => _testEpisode.imageUrl,
+            ),
         )).called(1);
         verifyNoMoreInteractions(_mockDio);
       },
@@ -80,7 +88,11 @@ void main() {
         when(_mockNetworkClient.client).thenReturn(_mockDio);
         when(_mockDio.post(
           ADDR_BASE + 'episodes/',
-          data: _testEpisode.toJson(),
+          data: _testEpisode.toJson()
+            ..putIfAbsent(
+              'mediaId',
+              () => _testEpisode.imageUrl,
+            ),
         )).thenAnswer((_) async => _testResponseFail);
 
         // act

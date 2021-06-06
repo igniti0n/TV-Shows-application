@@ -13,6 +13,8 @@ import 'package:tw_shows/functions/authenticating_user/data/entities/user_model.
 import 'package:tw_shows/functions/authenticating_user/domain/models/user.dart';
 import 'package:tw_shows/functions/comments/data/enteties/comment_model.dart';
 
+import '../../../fixtures_parser.dart';
+
 class MockNetworkClient extends Mock implements NetworkClient {}
 
 class MockDio extends Mock implements Dio {}
@@ -29,7 +31,8 @@ void main() {
   });
 
   final UserModel _testUserModel = UserModel('email', 'password');
-  final User _testUser = _testUserModel;
+  final Map<String, dynamic> _userLoginData =
+      jsonDecode(readFile('user_login'));
 
   final Response _testResponseFail = Response(
     data: {},
@@ -38,7 +41,7 @@ void main() {
   );
 
   final Response _testResponse = Response(
-    data: {},
+    data: _userLoginData,
     statusCode: 200,
     requestOptions: RequestOptions(path: 'testPath'),
   );

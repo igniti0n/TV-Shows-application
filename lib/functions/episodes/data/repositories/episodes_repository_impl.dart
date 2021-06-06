@@ -31,8 +31,10 @@ class EpisodesRepositoryImpl extends EpisodesRepository {
   @override
   Future<void> createNewEpisode(Episode episode) async {
     await _checkIfDeviceConnectedToInternet();
-    await _networkEpisodesDataSource
-        .createNewEpisode(EpisodeModel.fromEpisode(episode));
+    final String _imageUrl = await _networkEpisodesDataSource
+        .createNewEpisodeImage(episode.imageUrl);
+    await _networkEpisodesDataSource.createNewEpisode(
+        EpisodeModel.fromEpisode(episode.copyWith(imageUrl: _imageUrl)));
   }
 
   Future<void> _checkIfDeviceConnectedToInternet() async {

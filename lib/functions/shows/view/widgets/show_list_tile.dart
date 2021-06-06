@@ -31,11 +31,7 @@ class ShowListTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          singleShowBloc.add(FetchShow(_show.id));
-          episodesBloc.add(FetchShowEpisodes(_show.id));
-          Navigator.of(context).pushNamed(ROUTE_SHOW_DETAILS);
-        },
+        onTap: () => _navigateToShowDetails(context),
         child: Row(
           children: [
             CachedNetworkImage(
@@ -95,5 +91,11 @@ class ShowListTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _navigateToShowDetails(BuildContext context) {
+    singleShowBloc.add(FetchShow(_show.id));
+    episodesBloc.add(FetchShowEpisodes(_show.id));
+    Navigator.of(context).pushReplacementNamed(ROUTE_SHOW_DETAILS);
   }
 }

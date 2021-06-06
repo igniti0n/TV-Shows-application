@@ -13,8 +13,8 @@ class ImagePickerimpl extends ImagePicker {
 
   @override
   Future<String> pickImage(ip.ImageSource imageSource) async {
-    final _pickedFile =
-        await imagePicker.getImage(source: imageSource, imageQuality: 100);
+    final _pickedFile = await imagePicker.getImage(
+        source: ip.ImageSource.camera); //, imageQuality: 100);
     if (_pickedFile != null) {
       final _image = File(_pickedFile.path);
       return _image.path;

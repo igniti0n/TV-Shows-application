@@ -50,7 +50,6 @@ class EpisodeModel extends Episode {
       "description": this.description,
       "episodeNumber": this.episodeNumber,
       "season": this.seasonNumber,
-      // "_id": this.id,
       "imageUrl": this.imageUrl,
     };
   }

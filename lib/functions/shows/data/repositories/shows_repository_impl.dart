@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/connection_checker.dart';
 import 'package:tw_shows/functions/shows/data/datasources/network_data_source.dart';

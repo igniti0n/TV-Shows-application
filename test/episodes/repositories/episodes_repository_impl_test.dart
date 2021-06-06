@@ -222,7 +222,7 @@ void main() {
     );
 
     test(
-      'should call .createNewEpisode on the NetworkEpisodesDataSource with correct episode',
+      'should call .createNewEpisode  and .createNewEpisodeImage on the NetworkEpisodesDataSource with correct episode',
       () async {
         // arrange
         _setUpCreateEpisodeSuccess();
@@ -231,6 +231,9 @@ void main() {
         await _episodesRpositoryImpl.createNewEpisode(_testEpisode);
         // assert
         verify(_mockNetworkEpisodesDataSource.createNewEpisode(_testEpisode))
+            .called(1);
+        verify(_mockNetworkEpisodesDataSource
+                .createNewEpisodeImage(_testEpisode.imageUrl))
             .called(1);
         verifyNoMoreInteractions(_mockNetworkEpisodesDataSource);
       },

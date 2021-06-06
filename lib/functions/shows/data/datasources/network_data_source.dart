@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:dio/src/response.dart';
 import 'package:tw_shows/core/constants/networking.dart';
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/network_client.dart';
@@ -18,7 +19,7 @@ class NetworkShowsDataSourceImpl extends NetworkShowsDataSource {
   @override
   Future<Map<String, dynamic>> fetchAllShows() async {
     final _response = await _networkClient.client.get(ADDR_BASE + 'shows');
-    if (_response.statusCode != 200) throw ServerException();
+    _checkStatusCode(_response);
     return _response.data as Map<String, dynamic>;
   }
 
@@ -26,10 +27,14 @@ class NetworkShowsDataSourceImpl extends NetworkShowsDataSource {
   Future<Map<String, dynamic>> fetchShow(String showId) async {
     final _response =
         await _networkClient.client.get(ADDR_BASE + 'shows/$showId');
-    log('response data shows' + _response.data.toString());
-    if (!(_response.statusCode != 200 || _response.statusCode != 201))
-      throw ServerException();
+    _checkStatusCode(_response);
 
     return _response.data as Map<String, dynamic>;
+  }
+
+  void _checkStatusCode(Response<dynamic> _response) {
+    if (!(_response.statusCode == 200 || _response.statusCode == 201)) {
+      throw ServerException();
+    }
   }
 }

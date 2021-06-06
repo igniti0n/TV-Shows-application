@@ -20,35 +20,38 @@ class CommentsPage extends StatelessWidget {
       appBar: PlatformAppBar(
         title: PlatformText('Comments'),
       ),
-      body: SizedBox(
-        height: _deviceSize.height,
-        width: double.infinity,
-        child: Column(
-          children: [
-            Expanded(
-              child: BlocBuilder<CommentsBloc, CommentsState>(
-                builder: (context, commentsState) {
-                  if (commentsState is CommentsLoaded) {
-                    if (commentsState.comments.isEmpty) {
-                      return _buildNoComments(context);
+      body: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: SizedBox(
+          height: _deviceSize.height,
+          width: double.infinity,
+          child: Column(
+            children: [
+              Expanded(
+                child: BlocBuilder<CommentsBloc, CommentsState>(
+                  builder: (context, commentsState) {
+                    if (commentsState is CommentsLoaded) {
+                      if (commentsState.comments.isEmpty) {
+                        return _buildNoComments(context);
+                      }
+                      return _buildCommentsList(commentsState, _deviceSize);
+                    } else if (commentsState is CommentsError) {
+                      return Center(
+                        child: PlatformText(commentsState.message),
+                      );
                     }
-                    return _buildCommentsList(commentsState, _deviceSize);
-                  } else if (commentsState is CommentsError) {
                     return Center(
-                      child: PlatformText(commentsState.message),
+                      child: PlatformCircularProgressIndicator(),
                     );
-                  }
-                  return Center(
-                    child: PlatformCircularProgressIndicator(),
-                  );
-                },
+                  },
+                ),
               ),
-            ),
-            CommentInput(
-              deviceSize: _deviceSize,
-              episodeId: episodeId,
-            ),
-          ],
+              CommentInput(
+                deviceSize: _deviceSize,
+                episodeId: episodeId,
+              ),
+            ],
+          ),
         ),
       ),
     );

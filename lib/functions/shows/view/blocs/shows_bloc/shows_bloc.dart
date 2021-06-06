@@ -22,8 +22,10 @@ class ShowsBloc extends Bloc<ShowsEvent, ShowsState> {
     if (event is FetchShows) {
       yield ShowsLoading();
       final _either = await _loadShowsUsecase(NoParams());
-      yield _either.fold((Failure failure) => ShowsError(failure.message),
-          (List<Show> shows) => ShowsLoaded(shows));
+      yield _either.fold(
+        (Failure failure) => ShowsError(failure.message),
+        (List<Show> shows) => ShowsLoaded(shows),
+      );
     }
   }
 }

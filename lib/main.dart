@@ -10,6 +10,8 @@ import 'package:tw_shows/functions/authetication_checker/view/auth_form_bloc/aut
 import 'package:tw_shows/functions/comments/view/blocs/comment_post/comment_post_bloc.dart';
 import 'package:tw_shows/functions/comments/view/blocs/comments_bloc/comments_bloc.dart';
 import 'package:tw_shows/functions/dependency_injection.dart';
+import 'package:tw_shows/functions/episodes/view/blocs/episode_creation_bloc.dart/episode_creation_bloc.dart';
+import 'package:tw_shows/functions/episodes/view/blocs/episode_form_bloc/episode_form_bloc.dart';
 import 'package:tw_shows/functions/episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
 import 'package:tw_shows/functions/shows/view/blocs/shows_bloc/shows_bloc.dart';
 
@@ -20,7 +22,10 @@ import 'functions/authenticating_user/view/auth_bloc/auth_bloc_bloc.dart';
 import 'functions/authetication_checker/domain/usecases/load_rememberd_user_usecase.dart';
 import 'functions/comments/domain/usecases/create_new_comment_usecase.dart';
 import 'functions/comments/domain/usecases/load_episode_comments_usecase.dart';
+import 'functions/episodes/domain/usecases/create_episode_usecase.dart';
 import 'functions/episodes/domain/usecases/load_show_episodes_usecase.dart';
+import 'functions/episodes/domain/usecases/pick_image_usecase.dart';
+import 'functions/episodes/view/blocs/episode_image/episode_image_bloc.dart';
 import 'functions/shows/domain/usecases/load_show_usecase_impl.dart';
 import 'functions/shows/domain/usecases/load_shows_usecase_impl.dart';
 import 'functions/shows/view/blocs/single_show_bloc/single_show_bloc.dart';
@@ -70,6 +75,19 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => CommentPostBloc(
             GetIt.I<CreateNewCommentUsecase>(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => EpisodeFormBloc(),
+        ),
+        BlocProvider(
+          create: (_) => EpisodeImageBloc(
+            GetIt.I<PickImageUsecase>(),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => EpisodeCreationBloc(
+            GetIt.I<CreateEpisodeUsecase>(),
           ),
         ),
       ],

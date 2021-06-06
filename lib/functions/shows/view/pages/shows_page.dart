@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tw_shows/core/constants/pages.dart';
+import 'package:tw_shows/functions/authenticating_user/view/auth_bloc/auth_bloc_bloc.dart';
 import 'package:tw_shows/functions/episodes/view/blocs/episodes_bloc/episodes_bloc.dart';
 import 'package:tw_shows/functions/shows/domain/models/show.dart';
 import 'package:tw_shows/functions/shows/view/blocs/shows_bloc/shows_bloc.dart';
@@ -41,7 +43,16 @@ class ShowsPage extends StatelessWidget {
                     cupertino: (data) => data.textTheme.navLargeTitleTextStyle,
                   ),
                 ),
-                SvgPicture.asset('assets/ic-logout.svg'),
+                GestureDetector(
+                  onTap: () {
+                    BlocProvider.of<AuthBloc>(context).add(SignOut());
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      ROUTE_AUTH_PAGE,
+                      ModalRoute.withName('/'),
+                    );
+                  },
+                  child: SvgPicture.asset('assets/ic-logout.svg'),
+                ),
               ],
             ),
           ),

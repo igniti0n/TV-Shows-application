@@ -2,6 +2,8 @@
 
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:tw_shows/core/error/exceptions/exceptions.dart';
+import 'package:tw_shows/core/network/connection_checker.dart';
 import 'package:tw_shows/core/storage/secure_storage_manager.dart';
 import 'package:tw_shows/core/usecases/params.dart';
 import 'package:tw_shows/functions/authenticating_user/data/datasources/network_user_data_source.dart';
@@ -13,16 +15,23 @@ class MockNetworkUserDataSource extends Mock implements NetworkUserDataSource {}
 
 class MockSecureStorageManager extends Mock implements SecureStorageManager {}
 
+class MockConnectionChecker extends Mock implements ConnectionChecker {}
+
 void main() {
   MockNetworkUserDataSource _mockNetworkUserDataSource;
   MockSecureStorageManager _mockSecureStorageManager;
+  MockConnectionChecker _mockConnectionChecker;
   UserRepositoryImpl _userRepositoryImpl;
 
   setUp(() {
     _mockNetworkUserDataSource = MockNetworkUserDataSource();
     _mockSecureStorageManager = MockSecureStorageManager();
+    _mockConnectionChecker = MockConnectionChecker();
     _userRepositoryImpl = UserRepositoryImpl(
-        _mockNetworkUserDataSource, _mockSecureStorageManager);
+      _mockNetworkUserDataSource,
+      _mockSecureStorageManager,
+      _mockConnectionChecker,
+    );
   });
 
   final UserModel _testUserModel = UserModel('email', 'password');
@@ -30,9 +39,46 @@ void main() {
 
   group('authenticatin user', () {
     test(
+      'should check if there is Internet connection',
+      () async {
+        // arrange
+        when(_mockConnectionChecker.hasConnection)
+            .thenAnswer((_) async => true);
+
+        // act
+        await _userRepositoryImpl
+            .authenticateUserWithEmailAndPassword(_testUser);
+
+        // assert
+        verify(_mockConnectionChecker.hasConnection).called(1);
+
+        verifyNoMoreInteractions(_mockConnectionChecker);
+      },
+    );
+
+    test(
+      'should throw NoConnectionException when there is no Internet connection',
+      () async {
+        // arrange
+        when(_mockConnectionChecker.hasConnection)
+            .thenAnswer((_) async => false);
+
+        // act
+        final _call =
+            _userRepositoryImpl.authenticateUserWithEmailAndPassword(_testUser);
+
+        // assert
+        expect(_call, throwsA(isA<NoConnectionException>()));
+      },
+    );
+
+    test(
       'should call .signIn with right credentials on NetworkDataSource',
       () async {
         // arrange
+        when(_mockConnectionChecker.hasConnection)
+            .thenAnswer((_) async => true);
+
         when(_mockNetworkUserDataSource.signIn(_testUserModel))
             .thenAnswer((_) async => NoParams());
         // act

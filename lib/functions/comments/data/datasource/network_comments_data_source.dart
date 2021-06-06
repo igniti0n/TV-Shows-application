@@ -1,5 +1,4 @@
-import 'dart:developer';
-
+import 'package:dio/dio.dart';
 import 'package:tw_shows/core/constants/networking.dart';
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/network_client.dart';
@@ -21,9 +20,7 @@ class NetworkCommentsDataSourceImpl extends NetworkCommentsDataSource {
       ADDR_BASE + 'comments',
       data: commentModel.toJson(),
     );
-    log(_response.toString() + _response.statusCode.toString());
-    if (!(_response.statusCode == 201 || _response.statusCode == 200))
-      throw ServerException();
+    _checkStatusCode(_response);
   }
 
   @override
@@ -31,9 +28,14 @@ class NetworkCommentsDataSourceImpl extends NetworkCommentsDataSource {
       String episodeId) async {
     final _response = await _networkClient.client
         .get(ADDR_BASE + 'episodes/' + episodeId + '/comments');
-    if (!(_response.statusCode == 201 || _response.statusCode == 200))
-      throw ServerException();
+
+    _checkStatusCode(_response);
     return (_response.data['data'] as List<dynamic>)
         .cast<Map<String, dynamic>>();
+  }
+
+  void _checkStatusCode(Response<dynamic> _response) {
+    if (!(_response.statusCode == 201 || _response.statusCode == 200))
+      throw ServerException();
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:email_validator/email_validator.dart';
 import 'package:equatable/equatable.dart';
 
@@ -18,8 +20,9 @@ class AuthCredentials extends Equatable {
     bool _areAllInputsValid = (this.emailCredential.errorMessage == null &&
         this.passwordCredential.errorMessage == null);
 
-    _areAllInputsValid = (this.emailCredential.email.isNotEmpty &&
-        this.passwordCredential.password.isNotEmpty);
+    _areAllInputsValid = _areAllInputsValid &&
+        (this.emailCredential.email.isNotEmpty &&
+            this.passwordCredential.password.isNotEmpty);
 
     return _areAllInputsValid;
   }

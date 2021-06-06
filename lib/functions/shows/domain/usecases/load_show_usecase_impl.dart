@@ -20,7 +20,6 @@ class LoadShowUsecase extends Usecase<Show, ShowParams> {
     } on NoConnectionException catch (_) {
       return Left(NoConnectionFailure());
     } catch (err) {
-      log(err.toString());
       return Left(ServerFailure());
     }
   }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:tw_shows/core/error/failures/failures.dart';
 import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
@@ -21,10 +22,17 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
     if (event is FetchShowEpisodes) {
       final _responseEither =
           await _loadShowEpisodesUsecase(EpisodesParams(event.showId));
-      yield _responseEither.fold(
-        (Failure failure) => EpisodesError(failure.message),
-        (List<Episode> episodes) => EpisodesLoaded(episodes),
-      );
+      yield _yieldEpisodesStateForFetchingShows(_responseEither);
     }
+  }
+
+  EpisodesState _yieldEpisodesStateForFetchingShows(
+      Either<Failure, List<Episode>> _responseEither) {
+    return _responseEither.fold(
+      (Failure failure) => EpisodesError(failure.message),
+      (List<Episode> episodes) => EpisodesLoaded(episodes
+        ..sort(
+            (a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()))),
+    );
   }
 }

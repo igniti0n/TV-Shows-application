@@ -4,6 +4,7 @@ abstract class NetworkClient {
   Dio get client;
   void setInterceptorAuthHeader(String token);
   void removeInterceptorAuthHeader();
+  Future<FormData> createFormDataFromFile(String filePath);
 }
 
 class NetworkClientImpl extends NetworkClient {
@@ -22,6 +23,15 @@ class NetworkClientImpl extends NetworkClient {
         },
       ),
     );
+  }
+
+  Future<FormData> createFormDataFromFile(String filePath) async {
+    return FormData.fromMap({
+      'file': await MultipartFile.fromFile(
+        filePath,
+        filename: 'uploadfile',
+      ),
+    });
   }
 
   @override

@@ -22,3 +22,8 @@ class LocalStorageFailure extends Failure {
   @override
   String get message => ERROR_STORAGE;
 }
+
+class ImagePickingFailure extends Failure {
+  @override
+  String get message => ERROR_IMAGE_PICKING;
+}

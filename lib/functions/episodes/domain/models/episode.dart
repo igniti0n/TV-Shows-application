@@ -19,6 +19,34 @@ class Episode extends Equatable {
     required this.showId,
   });
 
+  Episode copyWith({
+    String? description,
+    String? imageUrl,
+    String? id,
+    String? showId,
+    String? title,
+    String? seasonNumber,
+    String? episodeNumber,
+  }) {
+    return Episode(
+      description: description ?? this.description,
+      imageUrl: imageUrl ?? this.imageUrl,
+      title: title ?? this.title,
+      seasonNumber: seasonNumber ?? this.seasonNumber,
+      episodeNumber: episodeNumber ?? this.episodeNumber,
+      id: id ?? this.id,
+      showId: showId ?? this.showId,
+    );
+  }
+
+  bool isValid() {
+    return (description.isNotEmpty &&
+        title.isNotEmpty &&
+        seasonNumber.isNotEmpty &&
+        episodeNumber.isNotEmpty &&
+        imageUrl.isNotEmpty);
+  }
+
   @override
   List<Object?> get props =>
       [id, showId, title, seasonNumber, episodeNumber, imageUrl, description];

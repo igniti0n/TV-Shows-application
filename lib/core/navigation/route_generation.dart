@@ -3,8 +3,8 @@ import 'package:tw_shows/core/constants/pages.dart';
 import 'package:tw_shows/functions/authenticating_user/view/pages/authentication_page.dart';
 import 'package:tw_shows/functions/comments/view/pages/comments_page.dart';
 import 'package:tw_shows/functions/episodes/domain/models/episode.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/pages/add_episode_page.dart';
-import 'package:tw_shows/functions/episodes/view/blocs/pages/episode_detal_page.dart';
+import 'package:tw_shows/functions/episodes/view/pages/add_episode_page.dart';
+import 'package:tw_shows/functions/episodes/view/pages/episode_detal_page.dart';
 import 'package:tw_shows/functions/shows/view/pages/show_details_page.dart';
 import 'package:tw_shows/functions/shows/view/pages/shows_page.dart';
 

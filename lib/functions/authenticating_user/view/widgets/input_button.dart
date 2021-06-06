@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_size_text_pk/auto_size_text_pk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,6 +50,7 @@ class InputButton extends StatelessWidget {
       return BlocBuilder<AuthFormBloc, AuthFormState>(
         builder: (context, formState) {
           final bool _isValid = formState.authCredentials.isValid();
+
           return GestureDetector(
             onTap: !_isValid
                 ? null

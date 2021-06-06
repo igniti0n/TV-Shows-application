@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:dio/src/response.dart';
+import 'package:dio/dio.dart';
 import 'package:tw_shows/core/constants/networking.dart';
 import 'package:tw_shows/core/error/exceptions/exceptions.dart';
 import 'package:tw_shows/core/network/network_client.dart';

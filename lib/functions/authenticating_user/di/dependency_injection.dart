@@ -15,7 +15,7 @@ void initiDependenciesAuthenticatingUser() {
       () => NetworkUserDataSourceImpl(_get()));
   //!repositories
   _get.registerLazySingleton<UserRepository>(
-      () => UserRepositoryImpl(_get(), _get()));
+      () => UserRepositoryImpl(_get(), _get(), _get()));
 
   //!usecases
   _get.registerLazySingleton<SignInUserUsecase>(
